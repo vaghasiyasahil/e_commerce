@@ -21,6 +21,8 @@
 
 		$imagename = "ProductImage/".$name.rand(0,10000).rand(0,10000).".jpg";
 
+		$imagename=str_replace(" ", "_", $name);
+
 		file_put_contents($imagename, $realimage);
 
 		$qry = "insert into products(UID,PRO_NAME,PRO_DES,PRO_PRICE,PRO_IMAGE) values ('$loginid','$name','$description','$price','$imagename')";
