@@ -4,8 +4,15 @@
     try {
         include_once("config.php");
 
-        // Enable Exception for MySQLi errors
-        mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+        // Query execution
+        $select = "SELECT * FROM usertable";
+        $sql = mysqli_query($con, $select);
+
+        // Fetch and display data
+        while ($row = mysqli_fetch_array($sql)) {
+            echo $row['name'] . "<br>";
+            echo $row['email'] . "<br>";
+        }
 
         // Query execution
         $select = "SELECT * FROM Products";
