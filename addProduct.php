@@ -19,9 +19,7 @@
 
 		$realimage = base64_decode($imagedata);
 
-		$imagename = "ProductImage/".$name.rand(0,10000).rand(0,10000).".jpg";
-
-		$imagename=str_replace(" ", "_", $name);
+		$imagename = "ProductImage/".str_replace(" ", "_", $name).rand(0, 10000).rand(0, 10000).".jpg";
 
 		file_put_contents($imagename, $realimage);
 
