@@ -11,7 +11,7 @@
 		$temp['connection'] = 0;
 	}
 
-		$qry = "select * from Products";
+		$qry = "select * from products";
 
 		$sql = mysqli_query($con, $qry);
 

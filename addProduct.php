@@ -23,7 +23,7 @@
 
 		file_put_contents($imagename, $realimage);
 
-		$qry = "insert into Products(UID,PRO_NAME,PRO_DES,PRO_PRICE,PRO_IMAGE) values ('$loginid','$name','$description','$price','$imagename')";
+		$qry = "insert into products(UID,PRO_NAME,PRO_DES,PRO_PRICE,PRO_IMAGE) values ('$loginid','$name','$description','$price','$imagename')";
 		
 		$sql = mysqli_query($con, $qry);
 		if($sql)

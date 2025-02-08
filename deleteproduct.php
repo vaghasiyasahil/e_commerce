@@ -16,7 +16,7 @@
 
 		
 
-		$qry = "delete from Products where ID = '$id'";
+		$qry = "delete from products where ID = '$id'";
 
 		$sql = mysqli_query($con, $qry);
 

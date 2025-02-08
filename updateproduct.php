@@ -23,7 +23,7 @@
 
 		file_put_contents($imagename, $realimage);
 
-		$qry = "update Products set PRO_NAME = '$name' , PRO_PRICE = '$price' , PRO_DES ='$description' where ID = '$id' ";
+		$qry = "update products set PRO_NAME = '$name' , PRO_PRICE = '$price' , PRO_DES ='$description' where ID = '$id' ";
 
 		$sql = mysqli_query($con, $qry);
 

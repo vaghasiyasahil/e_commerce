@@ -15,7 +15,7 @@
 	$loginid = $_POST['userid'];
 
 
-		$qry = "select * from Products where UID = '$loginid'";
+		$qry = "select * from products where UID = '$loginid'";
 
 		$sql = mysqli_query($con, $qry);
 

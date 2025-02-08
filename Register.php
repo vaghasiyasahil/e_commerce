@@ -18,7 +18,7 @@
 	$email = $_POST['email'];
 	$password = $_POST['password'];
 
-    $rr = "select * from UserTable where EMAIL = '$email'";
+    $rr = "select * from usertable where EMAIL = '$email'";
 
     $cheacksql =  mysqli_query($con,$rr);
 
@@ -28,7 +28,7 @@
     
 		// file_put_contents(filename, data)
 
-		$qry = "insert into UserTable (NAME,EMAIL,PASSWORD) values ('$name','$email','$password')";
+		$qry = "insert into usertable (NAME,EMAIL,PASSWORD) values ('$name','$email','$password')";
 
 
 		$sql = mysqli_query($con, $qry);
