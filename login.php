@@ -17,7 +17,7 @@
     $email= $_POST['email'];
     $password = $_POST['password'];
 
-    $qry = "select * from UserTable where EMAIL = '$email' and PASSWORD = '$password' ";
+    $qry = "select * from usertable where EMAIL = '$email' and PASSWORD = '$password' ";
 
     $sql = mysqli_query($con, $qry);
 
