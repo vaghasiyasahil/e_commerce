@@ -18,8 +18,8 @@
         }
 
     } catch (Exception $e) {
-        echo "\nError: " . $e->getMessage();
+        echo "<br>Error: " . $e->getMessage();
     }
 
-    echo "\nEnd";
+    echo "<br>End";
 ?>
