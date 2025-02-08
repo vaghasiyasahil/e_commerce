@@ -23,6 +23,8 @@
 
 		$imagename = "ProductImage/".$name.rand(0,10000).rand(0,10000).".jpg";
 
+		$imagename=str_replace(" ", "_", $name);
+
 		file_put_contents($imagename, $realimage);
 
 		$qry = "update products set PRO_NAME = '$name' , PRO_PRICE = '$price' , PRO_DES ='$description' , PRO_IMAGE = '$imagename' where ID = '$id' ";
