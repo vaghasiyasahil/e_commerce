@@ -15,7 +15,7 @@
         }
 
         // Query execution
-        $select = "SELECT * FROM Products";
+        $select = "SELECT * FROM products";
         $sql = mysqli_query($con, $select);
 
         // Fetch and display data
