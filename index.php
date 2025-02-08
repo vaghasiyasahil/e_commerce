@@ -1,4 +1,4 @@
-<?
+<?php
     echo "Start";
     include_once("config.php");
     $select="select * from Products";
