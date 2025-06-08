@@ -1,5 +1,5 @@
 <?php
 
- echo "welcome back";
+    echo "welcome back";
 
- ?>
+?>
