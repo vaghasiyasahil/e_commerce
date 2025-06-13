@@ -17,7 +17,7 @@ $storedEmail = $_COOKIE['email'];
 
 // Compare OTPs
 echo "user otp = $userOtp";
-echo "Store otp = storedOtp";
+echo "Store otp = $storedOtp";
 if ($userOtp == $storedOtp) {
     
     // Optional: delete the cookie after successful verification
