@@ -7,8 +7,6 @@ $data = json_decode(file_get_contents("php://input"), true);
 $userOtp = $data['otp'] ?? '';
 
 // Check if OTP cookie exists
-echo "store one otp = {$_COOKIE['otp']}";
-echo "\nEmail = {$_COOKIE['email']}";
 if (!isset($_COOKIE['otp']) || !isset($_COOKIE['email'])) {
     echo json_encode(["status" => "error", "message" => "OTP expired"]);
     exit;
@@ -18,8 +16,6 @@ $storedOtp = $_COOKIE['otp'];
 $storedEmail = $_COOKIE['email'];
 
 // Compare OTPs
-echo "\nuser otp = $userOtp";
-echo "\nStore otp = $storedOtp";
 if ($userOtp == $storedOtp) {
     
     // Optional: delete the cookie after successful verification
