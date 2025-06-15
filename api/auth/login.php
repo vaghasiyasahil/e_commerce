@@ -29,7 +29,10 @@ $result = $stmt->get_result();
 if ($result->num_rows === 1) {
     $user = $result->fetch_assoc();
 
-    if (password_verify($password, $user['password'])) {
+
+
+    // if (password_verify($password, $user['password'])) {
+    if ($password == $user['password']) {
         echo json_encode([
             "status" => "success",
             "message" => "Login successful",
