@@ -21,7 +21,7 @@ if (empty($email) || empty($password)) {
     exit;
 }
 
-$stmt = $con->prepare("SELECT id, name, password FROM users WHERE email='$email' and verify='true'");
+$stmt = $con->prepare("SELECT id, name, password FROM users WHERE email=? and verify='true'");
 $stmt->bind_param("s", $email);
 $stmt->execute();
 $result = $stmt->get_result();
