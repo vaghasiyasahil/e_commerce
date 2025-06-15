@@ -33,8 +33,8 @@ if ($checkQuery->num_rows > 0) {
 
 $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
-$stmt = $con->prepare("INSERT INTO users (name, email, password) VALUES (?, ?, ?)");
-$stmt->bind_param("sss", $username, $email, $hashedPassword);
+$stmt = $con->prepare("INSERT INTO users (name, email, password, verify) VALUES (?, ?, ?, 'false')");
+$stmt->bind_param("sss", $username, $email, $password,);
 
 if ($stmt->execute()) {
     echo json_encode(["status" => "success", "message" => "User registered successfully"]);
