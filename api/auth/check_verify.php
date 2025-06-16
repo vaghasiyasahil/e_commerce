@@ -33,7 +33,7 @@ if ($result->num_rows === 1) {
     if ($user['verify'] === 'true') {
         echo json_encode(["status" => "success", "message" => "User is verified"]);
     } else {
-        echo json_encode(["status" => "error", "message" => "User is not verified"]);
+        echo json_encode(["status" => "error", "message" => "User not found"]);
     }
 } else {
     echo json_encode(["status" => "error", "message" => "User not found"]);
