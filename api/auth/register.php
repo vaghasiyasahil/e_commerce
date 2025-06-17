@@ -20,21 +20,27 @@ if (empty($username) || empty($email) || empty($password)) {
     exit;
 }
 
-// Check if email already exists
-$checkQuery = $con->prepare("SELECT id FROM users WHERE email = ? and verify='true'");
+$checkQuery = $con->prepare("SELECT verify FROM users WHERE email = ?");
 $checkQuery->bind_param("s", $email);
 $checkQuery->execute();
 $checkQuery->store_result();
+$checkQuery->bind_result($verifyStatus);
+$checkQuery->fetch();
 
 if ($checkQuery->num_rows > 0) {
-    echo json_encode(["status" => "error", "message" => "Email already registered"]);
-    exit;
+    if ($verifyStatus === 'true') {
+        echo json_encode(["status" => "error", "message" => "Email already registered"]);
+        exit;
+    } else {
+        echo json_encode(["status" => "success", "message" => "User registered successfully"]);
+        exit;
+    }
 }
 
 $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
 $stmt = $con->prepare("INSERT INTO users (name, email, password, verify) VALUES (?, ?, ?, 'false')");
-$stmt->bind_param("sss", $username, $email, $password,);
+$stmt->bind_param("sss", $username, $email, $password);
 
 if ($stmt->execute()) {
     echo json_encode(["status" => "success", "message" => "User registered successfully"]);
