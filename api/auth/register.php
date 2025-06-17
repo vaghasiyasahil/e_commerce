@@ -21,7 +21,7 @@ if (empty($username) || empty($email) || empty($password)) {
 }
 
 // Check if email already exists
-$checkQuery = $con->prepare("SELECT id FROM users WHERE email = ?");
+$checkQuery = $con->prepare("SELECT id FROM users WHERE email = ? and verify='true'");
 $checkQuery->bind_param("s", $email);
 $checkQuery->execute();
 $checkQuery->store_result();
